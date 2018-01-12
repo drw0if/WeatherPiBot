@@ -7,7 +7,6 @@ import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
 public class mainRemote {
-	
 	public static void main(String[] args) {
 		boolean log = false;
 		
@@ -39,7 +38,5 @@ public class mainRemote {
 		if(log)
 			Logger.log("Bot opening");
 		System.out.println(method.Start);
-		
 	}
-
 }
