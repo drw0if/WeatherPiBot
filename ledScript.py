@@ -38,7 +38,7 @@ def blink():
 #Function for switching on and off the fan
 def fan():
         while True:
-                if getCaseTemperature() > maxCaseTemp or getCPUTemperatur$
+                if getCaseTemperature() > maxCaseTemp or getCPUTemperature() > maxCPUTemp:
                         GPIO.output(fanPin, 1)
                 else:
                         GPIO.output(fanPin, 0)
@@ -57,7 +57,7 @@ def getCaseTemperature():
 
 #Function to get the CPU temperature in degrees C
 def getCPUTemperature():
-        tempOutput = subprocess.check_output(['/opt/vc/bin/vcgencmd','mea$
+        tempOutput = subprocess.check_output(['opt/vc/bin/vcgencmd','measure_temp'])
         out1 = string.split(tempOutput, '=')
         out2 = string.split(out1[1], "'")
         return  float(out2[0])
